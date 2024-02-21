@@ -12,7 +12,7 @@ h3 {
 }
 
 .issue-subinfo {
-    font-size: .7rem;
+    font-size: 0.7rem;
     color: grey;
 }
 
@@ -22,16 +22,36 @@ h3 {
 
 .avatar {
     width: 35px;
-    border: 2px solid #222529;
     border-radius: 100%;
 }
 
 .label-picker {
     cursor: pointer;
-    transition: all .5s;
+    transition: all 0.2s;
 }
 
 .label-picker:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    transition: all .5s;
+    transition: all 0.2s;
+}
+
+
+.loader {
+    animation: spin-animation 1.5s infinite linear;
+    display: block;
+}
+
+@keyframes spin-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.label-active {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s;
 }
