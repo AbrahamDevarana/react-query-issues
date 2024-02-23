@@ -7,7 +7,7 @@ const getLabels = async (): Promise <LabelProps[]> => {
 
     await sleep(2)
     
-    const { data } = await gitHubApi.get<LabelProps[]>('/labels')
+    const { data } = await gitHubApi.get<LabelProps[]>('/labels?per_page=100')
 
     if (!data) {
         throw new Error('No data')
