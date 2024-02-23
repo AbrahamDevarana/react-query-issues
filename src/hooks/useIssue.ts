@@ -4,13 +4,13 @@ import { IssueProps } from "@/interfaces";
 import { useQuery } from "@tanstack/react-query"
 
 
-const getIssue = async (issueNumber: number):Promise<IssueProps> => {
+export const getIssue = async (issueNumber: number):Promise<IssueProps> => {
     await sleep(2)
     const { data } = await gitHubApi.get<IssueProps>(`/issues/${issueNumber}`)
     return data
 }   
 
-const getIssueComments = async (issueNumber: number):Promise<IssueProps[]> => {
+export const getIssueComments = async (issueNumber: number):Promise<IssueProps[]> => {
     await sleep(2)
     const { data } = await gitHubApi.get<IssueProps[]>(`/issues/${issueNumber}/comments`)
     return data
